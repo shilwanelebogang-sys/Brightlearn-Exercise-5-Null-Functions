@@ -1,106 +1,71 @@
-# 🧹 Advanced SQL Project — NULL Handling & Data Cleaning
+# 🧹 SQL Exercise — NULL Functions
 
 ## 📌 Overview
-This project demonstrates advanced SQL techniques for handling NULL values across multiple real-world datasets.
+This repository contains a **handwritten SQL exercise** focused on handling NULL values.
 
-Missing data is one of the most common challenges in data analytics, and this project shows how to clean, transform, and prepare data for analysis using SQL.
-
----
-
-## 🎯 Objective
-
-- Handle missing (NULL) values effectively  
-- Replace NULLs with meaningful defaults  
-- Build clean, analysis-ready datasets  
-- Apply SQL logic used in real business environments  
+The exercise is part of my SQL learning journey and was completed manually to strengthen my understanding of how to work with incomplete data.
 
 ---
 
-## 📊 Dataset Description
+## ✍️ Exercise Approach
 
-This project includes 16 structured tables, each simulating a real business scenario:
+For this exercise, I:
 
-- Employees (missing salaries & departments)  
-- Orders (missing customer and delivery info)  
-- Students (missing grades)  
-- Products (missing discounts)  
-- Customers (missing emails)  
-- Payments (missing methods/status)  
-- Inventory (missing quantities)  
-- Bank accounts, projects, reviews, suppliers, and more  
+- Wrote all SQL queries by hand  
+- Practiced problem-solving without using a SQL tool  
+- Focused on understanding how NULL values affect data  
+- Drew expected output tables for each question  
+
+📎 The handwritten solutions are scanned and included in this repository.
 
 ---
 
-## 🧠 Key SQL Skills Demonstrated
+## 🎯 Concepts Covered
 
-### ✅ Replace NULL Values
+The exercise covers key NULL handling techniques used in SQL:
+
+- `COALESCE()`  
+- `IFNULL()` / `ISNULL()`  
+- `CASE WHEN`  
+- `COUNT()` with NULL filtering  
+
+---
+
+## 🧠 What I Practiced
+
+- Replacing NULL values with defaults  
+- Handling missing text and numeric data  
+- Writing clean and readable SQL logic  
+- Understanding how NULL impacts analysis  
+
+---
+
+## 📊 Example
+
+Handling missing salary values:
+
 ```sql
 SELECT 
     employee_id,
     name,
-    COALESCE(salary, 0) AS salary_with_default
-FROM employees;
-```
-### ✅ Replace NULL Text Values
-```SQL
-SELECT   employee_id,    
-            name,    
-            COALESCE(department, 'Not Assigned') AS department_name
-FROM employees;
-```
-
-### ✅ Count Missing Values
-```SQL
-SELECT COUNT(*) AS missing_email_count
-FROM customersWHERE email IS NULL;
-```
-
-### ✅ First Non-NULL Value (COALESCE)
-```SQL
-SELECT  emp_id,    
-        COALESCE(bonus, commission) AS first_available_reward
-FROM employees_extra;
-```
-
-### ✅ Multiple Default Values
-```SQL
-SELECT  user_id,    
-        IFNULL(theme, 'Light') AS theme_set,    
-        IFNULL(language, 'English') AS language_set,    
-        IFNULL(timezone, 'UTC') AS timezone_set
-FROM user_settings;
-```
-
-## 🧪 Example Problem
-Scenario: Replace missing salary and department values
-```SQL
-SELECT  employee_id,    
-        name,    
-        IFNULL(department, 'Not Assigned') AS department_name,    
-        IFNULL(salary, 0) AS salary_with_default
+    IFNULL(salary, 0) AS salary_with_default
 FROM employees;
 ```
 
 ---
-## 📈 Business Value
-This project demonstrates how SQL is used to:
 
-Clean messy datasets
-Prepare data for dashboards and reporting
-Handle incomplete information in real systems
-Improve data quality and consistency
+## 📂 Repository Contents
 
----
-## 🛠️ Tools Used
-
-SQL (ANSI SQL / Databricks SQL)
-GitHub
-CSV datasets
+- 📄 Handwritten SQL solutions (scanned)
+- 📊 Exercise questions
+- ✅ Expected outputs (drawn tables)
 
 ---
-## 🚀 Key Takeaways
 
-NULL values must always be handled before analysis
-COALESCE is one of the most powerful SQL functions
-Clean data = reliable insights
-Data preparation is a critical part of analytics workflows
+## 🚀 Learning Outcome
+
+This exercise helped me:
+- Build strong SQL fundamentals
+- Improve logical thinking
+- Understand real-world data cleaning scenarios
+- Gain confidence in writing SQL without tools

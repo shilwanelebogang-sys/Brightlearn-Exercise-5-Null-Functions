@@ -26,7 +26,6 @@ The exercise covers key NULL handling techniques used in SQL:
 
 - `COALESCE()`  
 - `IFNULL()` / `ISNULL()`  
-- `CASE WHEN`  
 - `COUNT()` with NULL filtering  
 
 ---
